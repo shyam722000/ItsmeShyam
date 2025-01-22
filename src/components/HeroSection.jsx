@@ -21,13 +21,7 @@ const HeroSection = () => {
           <img src={logo} alt="Logo" className="logo" />
         </div>
         <div className="social-media-icons">
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaTwitter />
-          </a>
+        
           <a
             href="https://instagram.com"
             target="_blank"
@@ -36,7 +30,7 @@ const HeroSection = () => {
             <FaInstagram />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/shyamrithul-thelokki/"
             target="_blank"
             rel="noopener noreferrer"
           >

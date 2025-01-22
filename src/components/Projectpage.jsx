@@ -19,7 +19,7 @@ const Projectpage = () => {
         </div>
         <nav className="Pro_-nav-links">
           <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          {/* <a href="/contact">Contact</a> */}
         </nav>
       </div>
 
@@ -45,7 +45,7 @@ const Projectpage = () => {
             </div>
 
             <div className="button-container">
-              <button onClick={() => handleCardClick(1)}>View Details</button>
+              <button>View Details</button>
             </div>
           </div>
           <div className="project-card">
@@ -65,7 +65,7 @@ const Projectpage = () => {
             </div>
 
             <div className="button-container">
-              <button onClick={() => handleCardClick(1)}>View Details</button>
+              <button >View Details</button>
             </div>
           </div>
           <div className="project-card">
@@ -87,7 +87,7 @@ const Projectpage = () => {
             </div>
 
             <div className="button-container">
-              <button onClick={() => handleCardClick(1)}>View Details</button>
+              <button >View Details</button>
             </div>
           </div>
           <div className="project-card">

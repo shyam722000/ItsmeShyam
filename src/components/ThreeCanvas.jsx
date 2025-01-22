@@ -155,7 +155,7 @@ const SpaceBackground = forwardRef((_, ref) => {
       {showButtons && (
         <div className="buttons-container">
           <button onClick={handleProjectsClick}>Projects</button>
-          <button onClick={handleContactClick}>Contact</button>
+          {/* <button onClick={handleContactClick}>Contact</button> */}
           <button onClick={handleaboutClick}>About</button>
         </div>
       )}
