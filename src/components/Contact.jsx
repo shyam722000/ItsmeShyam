@@ -59,7 +59,7 @@ const ContactPage = () => {
                 <a href="/">Home</a>
                 <Link to="/about">About</Link>
                
-                <a href="/projects">Projects</a>
+                <Link to="/projects">About</Link>
               </nav>
             </div>
       <SpaceBackground />
