@@ -55,7 +55,8 @@ const ContactPage = () => {
               </div>
               <nav className="Pro_-nav-links">
                 <a href="/">Home</a>
-                <a href="/contact">Contact</a>
+                <Link to="/about">About</Link>
+               
                 <a href="/projects">Projects</a>
               </nav>
             </div>

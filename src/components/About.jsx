@@ -52,7 +52,7 @@ const AboutSection = () => {
               </div>
               <nav className="Pro_-nav-links">
                 <a href="/">Home</a>
-                {/* <a href="/contact">Contact</a> */}
+                <a href="/ContactMe">Contact</a>
               </nav>
             </div>
       <SpaceBackground />

@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Projectpage.css";
 import NebulaBackground from "./SpacePro";
 import logo from "../loho.png";
@@ -18,8 +18,8 @@ const Projectpage = () => {
           <img src={logo} alt="Company Logo" />
         </div>
         <nav className="Pro_-nav-links">
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+        <Link to="/about">About</Link>
+        <Link to="/ContactMe">Contact</Link>
         </nav>
       </div>
 
