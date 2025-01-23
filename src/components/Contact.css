@@ -6,7 +6,7 @@
 
 .Cus-content {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -20,29 +20,34 @@
   max-width: 1200px;
   /* border: 1px solid rgb(253, 253, 253); */
   opacity: 1;
+  align-items: end;
   transition: opacity 0.3s ease-in-out;
 }
 
 .Cus-notebook {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   width: 100%;
-  /* height: 50vh; */
+  height: 90%;
   /* background: linear-gradient(to right, #f7f7f7 50%, #eaeaea 50%); */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   overflow: hidden;
+  /* border: solid 1px #ffffff; */
+ 
 }
 
 .Cus-notebook-left,
 .Cus-notebook-right {
   width: 50%;
+  /* border: 2px solid rgb(220, 205, 205); */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  /* height: 100%; */
 }
 
 .Cus-notebook-left {
@@ -55,6 +60,9 @@
   /* background: #f5f5f5; */
   text-align: center;
   color: #555555;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .Cus-notebook-right p {
@@ -146,29 +154,47 @@ textarea {
 /* Mobile Screens (max-width: 480px) */
 @media screen and (max-width: 480px) {
   .Cus-container {
-    width: 80%;
+    width: 100%;
     padding: 10px -10px ;
+
 
   }
   .Cus-content {
     flex-direction: column;
-    width: 90%;
-    height: auto;
+    width: 100%;
+    /* height: auto; */
+    margin-top: 110px;
+    
   }
 
   .Cus-notebook {
     flex-direction: column;
     box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  /* margin-top: 80px; */
+    
+   
   }
 
   .Cus-notebook-left,
   .Cus-notebook-right {
-    width: 100%;
+    width: 90%;
+
     padding: 10px;
+    /* padding: 10px; */
   }
 
   label {
     font-size: 0.9rem;
+  }
+  input{
+    width: 97%;
+  }
+  textarea{
+    width: 97%;
   }
 }
 
