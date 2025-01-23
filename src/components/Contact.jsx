@@ -15,44 +15,38 @@ const ContactPage = () => {
     email: "",
     message: "",
   });
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+ 
 
   const validateForm = () => {
-    const newErrors = {};
     let isValid = true;
-
+  
     // Validate Name
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required.";
+      toast.error("Name is required.");
       isValid = false;
     } else if (formData.name.length < 3) {
-      newErrors.name = "Name must be at least 3 characters.";
+      toast.error("Name must be at least 3 characters.");
       isValid = false;
     }
-
+  
     // Validate Email
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
+      toast.error("Email is required.");
       isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address.";
+      toast.error("Please enter a valid email address.");
       isValid = false;
     }
-
+  
     // Validate Message
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required.";
+      toast.error("Message is required.");
       isValid = false;
     } else if (formData.message.length < 10) {
-      newErrors.message = "Message must be at least 10 characters.";
+      toast.error("Message must be at least 10 characters.");
       isValid = false;
     }
-
-    setErrors(newErrors);
+  
     return isValid;
   };
 
@@ -97,7 +91,7 @@ const ContactPage = () => {
 
   return (
     <div className="Cus-container">
-      <ToastContainer position="top-right" autoClose={3000} />
+      <ToastContainer  autoClose={3000} style={{width:"60%"}} />
         <div className="project_header">
         <div className="project_logo">
           <img src={logo} alt="Company Logo" />
@@ -124,7 +118,6 @@ const ContactPage = () => {
                   onChange={handleChange}
                   required
                 />
-                    {errors.name && <p className="error">{errors.name}</p>}
               </label>
               <label>
                 Email:
@@ -135,7 +128,6 @@ const ContactPage = () => {
                   onChange={handleChange}
                   required
                 />
-                  {errors.email && <p className="error">{errors.email}</p>}
               </label>
               <label>
                 Message:
@@ -147,7 +139,6 @@ const ContactPage = () => {
                 >
 
                 </textarea>
-                {errors.message && <p className="error">{errors.message}</p>}
               </label>
               
             </form>

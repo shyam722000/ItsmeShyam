@@ -11,7 +11,7 @@ const AboutSection = () => {
     {
       name: "About Me",
       description:
-      "Experienced Front-End Developer specializing in React, with a proven track record of delivering responsive and user-centric web applications. Skilled in creating intuitive interfaces, optimizing performance, and ensuring cross-browser compatibility. Passionate about staying updated with modern web technologies and contributing to innovative projects. Eager to join a dynamic team to build impactful, scalable, and cutting-edge solutions.",
+      "I am an experienced Front-End Developer specializing in React, with a proven track record of delivering responsive and user-centric web applications. I excel in creating intuitive interfaces, optimizing performance, and ensuring cross-browser compatibility. Passionate about staying ahead in the ever-evolving landscape of modern web technologies, I am dedicated to building impactful, scalable, and cutting-edge solutions that drive innovation and deliver exceptional user experiences.",
       skills: [
         "HTML",
         "CSS",
@@ -45,6 +45,7 @@ const AboutSection = () => {
 
   const currentProject = projects[currentProjectIndex];
 
+
   return (
     <div className="Pro-container">
 <div className="project_header">
@@ -64,7 +65,7 @@ const AboutSection = () => {
           <h1 className="Pro-project-name">{currentProject.name}</h1>
           <div className="Pro-details">
             <div className="Pro-description">
-              <h2>Description</h2>
+              {/* <h2>Description</h2> */}
               <p>{currentProject.description}</p>
             </div>
             <div className="social-media-icons">
