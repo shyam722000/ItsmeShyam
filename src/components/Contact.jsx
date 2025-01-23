@@ -59,7 +59,7 @@ const ContactPage = () => {
                 <a href="/">Home</a>
                 <Link to="/about">About</Link>
                
-                <Link to="/projects">About</Link>
+                <Link to="/projects">Projects</Link>
               </nav>
             </div>
       <SpaceBackground />
@@ -67,7 +67,7 @@ const ContactPage = () => {
       <div className="Cus-content">
         <div className="Cus-notebook">
           <div className="Cus-notebook-left">
-            <h2>Contact Form</h2>
+            <h2>Contact Me</h2>
             <form onSubmit={handleSubmit}>
               <label>
                 Name:

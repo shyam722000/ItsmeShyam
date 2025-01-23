@@ -140,3 +140,70 @@ textarea {
     color: #ca991b; /* Optional: Change text color on hover */
   }
   
+
+  /* Responsive Styles */
+
+/* Mobile Screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .Cus-container {
+    width: 80%;
+    padding: 10px -10px ;
+
+  }
+  .Cus-content {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .Cus-notebook {
+    flex-direction: column;
+    box-shadow: none;
+  }
+
+  .Cus-notebook-left,
+  .Cus-notebook-right {
+    width: 100%;
+    padding: 10px;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Landscape & Small Tablets (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .Cus-container {
+    width: 80%;
+    padding: 10px;
+
+  }
+  .Cus-content {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .Cus-notebook {
+    flex-direction: column;
+  }
+
+  .Cus-notebook-left,
+  .Cus-notebook-right {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Tablets & Small Laptops (769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .Cus-content {
+    width: 90%;
+  }
+
+  .Cus-notebook-left,
+  .Cus-notebook-right {
+    padding: 20px;
+  }
+}

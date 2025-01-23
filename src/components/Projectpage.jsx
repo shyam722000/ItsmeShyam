@@ -18,6 +18,7 @@ const Projectpage = () => {
           <img src={logo} alt="Company Logo" />
         </div>
         <nav className="Pro_-nav-links">
+        <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/ContactMe">Contact</Link>
         </nav>
@@ -25,8 +26,11 @@ const Projectpage = () => {
 
       <NebulaBackground />
       <div className="scrollable-content">
+        
         <div className="project-grid">
+          
           <div className="project-card">
+        
             <div className="icon">📦</div>
 
             <div className="content">
