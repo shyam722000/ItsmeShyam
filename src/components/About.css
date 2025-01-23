@@ -2,6 +2,7 @@
     /* position: relative; */
     width: 100%;
     height: 100vh;
+    margin-top: 20px;
     overflow: hidden;
   }
   
@@ -62,6 +63,7 @@
   .Pro-description p {
     font-size: 1rem;
     line-height: 1.5;
+    text-align: left;
   }
   
   .Pro-right {
@@ -149,6 +151,17 @@
     margin-right: 10px;
     color: #00bcd4; /* Use a highlight color for the dot */
   }
+  .social-icon {
+    font-size: 1.5rem; /* Icon size */
+    margin: 0 10px; /* Spacing between icons */
+    color: rgb(211, 72, 72); /* Default icon color */
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .social-icon:hover {
+    color: #007bff; /* Change to blue on hover */
+  }
+  
   
 
 
@@ -161,11 +174,13 @@
     width: 95%;
     height: 100%;
     overflow-y: scroll;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    padding-top: 30px;
   }
   .Pro-left {
 
     text-align: left;
+    margin-top:30px;
   }
   .Pro-right {
     flex: 1;
@@ -189,8 +204,9 @@
   .Pro-description p {
     font-size: 0.9rem;
     text-align: center;
+    text-align: justify;
   }
-
+ 
   .Pro-right {
     /* margin-top: 20px; */
     height: 100%;

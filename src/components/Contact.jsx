@@ -51,17 +51,16 @@ const ContactPage = () => {
 
   return (
     <div className="Cus-container">
-        <div className="Pro_">
-              <div className="Pro_-logo">
-                <img src={logo} alt="Company Logo" />
-              </div>
-              <nav className="Pro_-nav-links">
-                <a href="/">Home</a>
-                <Link to="/about">About</Link>
-               
-                <Link to="/projects">Projects</Link>
-              </nav>
-            </div>
+        <div className="project_header">
+        <div className="project_logo">
+          <img src={logo} alt="Company Logo" />
+        </div>
+        <nav className="project_nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/projects">Projects</Link>
+        </nav>
+      </div>
       <SpaceBackground />
 
       <div className="Cus-content">

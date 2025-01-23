@@ -4,6 +4,7 @@ import "./About.css";
 import nethra from "../about.png";
 import logo from "../loho.png";
 import { Link } from "react-router-dom";
+import { FaTwitter, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const AboutSection = () => {
   const projects = [
@@ -66,6 +67,33 @@ const AboutSection = () => {
               <h2>Description</h2>
               <p>{currentProject.description}</p>
             </div>
+            <div className="social-media-icons">
+                    
+                      <a
+                        href="https://www.instagram.com/rithul_007"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-icon"
+                      >
+                        <FaInstagram />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/shyamrithul-thelokki"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-icon"
+                      >
+                        <FaLinkedin />
+                      </a>
+                      <a
+                        href="https://github.com/shyam722000/ItsmeShyam"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-icon"
+                      >
+                        <FaGithub />
+                      </a>
+                    </div>
           </div>
         </div>
         <div className="Pro-right">

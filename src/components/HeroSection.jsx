@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import SpaceBackground from "./ThreeCanvas";
 import "./HeroSection.css";
 import logo from "../loho.png";
-import { FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaTwitter, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import uparrow from "../uparrow.png";
 
 const HeroSection = () => {
@@ -23,18 +23,25 @@ const HeroSection = () => {
         <div className="social-media-icons">
         
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/rithul_007"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaInstagram />
           </a>
           <a
-            href="https://www.linkedin.com/in/shyamrithul-thelokki/"
+            href="https://www.linkedin.com/in/shyamrithul-thelokki"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/shyam722000/ItsmeShyam"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub />
           </a>
         </div>
       </div>

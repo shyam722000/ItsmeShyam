@@ -173,6 +173,9 @@ body {
   .project_header{
     width: 90%;
   }
+  .project_scrollable-content{
+    margin-bottom: 50px;
+  }
 
   .project_card {
     padding: 10px;
