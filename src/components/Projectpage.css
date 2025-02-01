@@ -97,6 +97,10 @@ body {
   /* Adjust as needed */
   animation: flyIn 1.5s ease-out; 
 }
+project_icon img {
+  width: 10px;
+  height: 10px;
+}
 @keyframes flyIn {
   0% {
     transform: translate(-200%, 200%) scale(1.5); /* Start off the bottom-left corner */

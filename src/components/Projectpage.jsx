@@ -120,6 +120,39 @@ const Projectpage = () => {
               </button>
             </div>
           </div>
+          <div className="project_card">
+            <div className="project_icon">✈️</div>
+
+            <div className="project_content">
+              <h3>Finhouse Accounting Service Co - Business Website</h3>
+              <p>
+              Finhouse Accounting Service Co. is an esteemed Chartered Accountant firm established in 2020 with offices in KSA, India, and UAE. Our diversified and passionate team, led by eminent partners, specializes in Tax Advisory, Audit & Assurance, Regulatory services, Management, and Business consultancy services. We are committed to providing clients with a broad level of quality support across a wide range of corporate services.
+              </p>
+            </div>
+            <div className="project_button-container">
+              <button
+                onClick={() => window.open("https://finhouse.ae/", "_blank")}
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+          <div className="project_card">
+            <div className="project_icon">✈️</div>
+
+            <div className="project_content">
+              <h3>Malnad Dreams- Business Website</h3>
+              <p>
+              We believe that interior beauty lasts long. As a travel agent, I provide personalized travel planning for individuals, couples, families, and groups. I grow my business with referrals from my clients, which I believe is a sign of their satisfaction and confidence in my services. My love for travel inspired me to share my knowledge with friends, and I found joy in planning their trips. This passion led me to become an independent, outside agent for my travel agency.              </p>
+            </div>
+            <div className="project_button-container">
+              <button
+                onClick={() => window.open("https://malnaddreams.com/", "_blank")}
+              >
+                View Details
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
