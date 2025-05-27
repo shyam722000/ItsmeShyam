@@ -64,21 +64,21 @@ const AboutMe = () => {
           {/* Icons */}
           <div className="pi-about-icons">
             <a
-              href="https://github.com"
+              href="https://github.com/shyam722000"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/shyamrithulrs/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLinkedin />
             </a>
             <a
-              href="https://instagram.com"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
             >
