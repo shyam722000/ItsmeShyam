@@ -1,28 +1,25 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/About";
-import ProjectPage from "./components/Projectpage";
-import ContactPage from "./components/Contact";
-import ExperienceModal from "./components/ExperienceModal";
-
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import HomePage from "./components/HomePage/HomePage";
+import BlogSection from "./components/BlogSection/CodesSection/CodesSection";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <Router>
-      <div className="main">
+    <BrowserRouter>
+      <div className="app-container">
         <Routes>
-          <Route path="/" element={<HeroSection />} />
-          <Route path="/home" element={<HeroSection />} />
-
-          <Route path="/about" element={<AboutSection />} />
-          <Route path="/projects" element={<ProjectPage />} />
-          <Route path="/ContactMe" element={<ContactPage />} />
-          <Route path="/ExperienceSection" element={<ExperienceModal />} />
-
+          <Route path="/" element={<HomePage />} />
+          <Route path="/codesandref" element={<BlogSection />} />
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

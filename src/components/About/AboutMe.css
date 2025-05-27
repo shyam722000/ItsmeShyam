@@ -1,0 +1,156 @@
+.pi-about-section {
+  color: #fff;
+  padding: 4rem 2rem;
+  font-family: "Georgia", serif;
+  /* background: #111827; */
+  min-height: 100vh;
+}
+
+.pi-logo {
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pi-logo span {
+  color: #d1d1d1;
+}
+
+.pi-about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.pi-about-image {
+  width: 50%;
+}
+
+.pi-about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  transition: transform 10s ease;
+
+  clip-path: inset(0 100% 0 0);
+  animation: fillFromLeft 1s forwards ease-out;
+}
+
+@keyframes fillFromLeft {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.pi-about-image img:hover {
+  transform: scale(1.05);
+}
+
+.pi-about-content {
+  width: 50%;
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.pi-about-content.pi-content-visible {
+  animation: fadeInSlideLeft 0.8s ease-out forwards;
+}
+
+.pi-about-content h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.pi-about-content .pi-outline {
+  color: #d1d1d1;
+}
+
+.pi-about-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #d1d1d1;
+  margin-bottom: 1.5rem;
+}
+
+.pi-about-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.pi-about-icons a {
+  color: #777474;
+  transition: color 0.3s ease;
+}
+
+.pi-about-icons a:hover {
+  color: #fff;
+}
+
+.pi-about-icons svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Animations */
+@keyframes fadeInSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pi-about-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .pi-about-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .pi-about-image,
+  .pi-about-content {
+    width: 100%;
+  }
+
+  .pi-about-content h2 {
+    font-size: 2rem;
+  }
+
+  .pi-about-content p {
+    font-size: 1.1rem;
+  }
+
+  .pi-about-icons svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pi-about-section {
+    padding: 2rem 1rem;
+  }
+
+  .pi-about-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .pi-about-content p {
+    font-size: 1rem;
+  }
+
+  .pi-about-icons svg {
+    width: 24px;
+    height: 24px;
+  }
+}
