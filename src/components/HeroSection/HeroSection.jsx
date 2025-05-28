@@ -23,7 +23,7 @@ const HeroSection = ({
   return (
     <section className="pi-hero">
       <div className="pi-logo">
-        0.07 <span>RS Craft</span>
+        0.07 <span>Code & Craft</span>
       </div>
 
       <button className="pi-hamburger" onClick={toggleMenu}>
@@ -52,7 +52,7 @@ const HeroSection = ({
           </div>
           <div className="pi-hero-down-text">
             <h1>
-              <span className="pi-outline"> The 0.07 <code>&lt;RS-Craft /&gt;</code></span>
+              <span className="pi-outline"> The 0.07 <code>&lt;Code & Craft /&gt;</code></span>
               <Typewriter
                 words={[
                   "That Gets Shit Done",

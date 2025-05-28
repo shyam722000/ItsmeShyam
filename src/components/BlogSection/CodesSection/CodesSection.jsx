@@ -96,7 +96,7 @@ const BlogSection = () => {
         onClick={backtohome}
         style={{ cursor: "pointer" }}
       >
-        0.07 <span>RS Craft</span>
+        0.07 <span>Code & Craft</span>
 
       
       </div>

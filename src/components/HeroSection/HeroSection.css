@@ -284,7 +284,7 @@ input:checked + .pi-slider:before {
 
 @media (max-width: 600px) {
   .pi-hero-up-text p {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 
   .pi-hero-up-text p:nth-child(2) {
