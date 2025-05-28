@@ -53,7 +53,7 @@ const Scroll3DModel = () => {
         <ambientLight intensity={0.7} />
         <directionalLight position={[10, 10, 5]} intensity={6.1} />
         <Model />
-        <OrbitControls enableZoom={true} minDistance={10} maxDistance={20} />
+        <OrbitControls enableZoom={false} minDistance={10} maxDistance={20} />
       </Canvas>
     </div>
   );
