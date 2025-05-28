@@ -46,18 +46,18 @@ const HeroSection = ({
         <div className="pi-hero-text-left">
           <div className="pi-hero-up-text">
             <p>
-              it's me Shyam <span className="pi-outline">Rithul R s</span>
+              it's me <span className="pi-outline">Shyam Rithul</span>  R S
             </p>
-            <p>Software Developer</p>
+            <p>React JS Developer</p>
           </div>
           <div className="pi-hero-down-text">
             <h1>
-              <span className="pi-outline">The </span>
+              <span className="pi-outline"> The 0.07 <code>&lt;RS-Craft /&gt;</code></span>
               <Typewriter
                 words={[
-                  "0.07 <RS-Craft /> That Gets Shit Done",
-                  "0.07 <RS-Craft /> That Builds Real Stuff",
-                  "0.07 <RS-Craft /> That Delivers",
+                  "That Gets Shit Done",
+                  "That Builds Real Stuff",
+                  "That Delivers",
                 ]}
                 loop={false}
                 cursor
