@@ -3,7 +3,7 @@ import "./HeroSection.css";
 import Scroll3DModel from "../../assets/Scroll3DModel";
 import { Typewriter } from "react-simple-typewriter";
 import { FaMouse, FaBars, FaTimes } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = ({
   scrollToProjects,
@@ -11,10 +11,10 @@ const HeroSection = ({
   scrollToContact,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
- const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const goToCodesAndRef = () => {
-    navigate('/codesandref');
+    navigate("/codesandref");
   };
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,27 +22,26 @@ const HeroSection = ({
 
   return (
     <section className="pi-hero">
-       <div
-  className="pi-logo"
-  onClick={() => window.location.reload()}
-  style={{ cursor: 'pointer' }}
->
-  0.07 <span>Code & Craft</span>
-</div>
-
+      <div
+        className="pi-logo"
+        onClick={() => window.location.reload()}
+        style={{ cursor: "pointer" }}
+      >
+        0.07 <span>Code & Craft</span>
+      </div>
 
       <button className="pi-hamburger" onClick={toggleMenu}>
         {isMenuOpen ? <FaTimes /> : <FaBars />}
       </button>
 
       <nav className={`pi-navbar ${isMenuOpen ? "pi-navbar-open" : ""}`}>
-        <a onClick={scrollToProjects}>Projects</a>
-        <a onClick={scrollToExperience}>Experience</a>
-        <a href="#">About</a>
-       <button className="pi-collab-btn" onClick={goToCodesAndRef}>
-      Codes & Ref
-    </button>
-        <button className="pi-collab-btn" onClick={scrollToContact}>
+        <a onClick={() => { scrollToProjects(); toggleMenu(); }}>Projects</a>
+        <a onClick={() => { scrollToExperience(); toggleMenu(); }}>Experience</a>
+        <a onClick={() => { toggleMenu(); }}>About</a>
+        <button className="pi-collab-btn" onClick={() => { goToCodesAndRef(); toggleMenu(); }}>
+          Codes & Ref
+        </button>
+        <button className="pi-collab-btn" onClick={() => { scrollToContact(); toggleMenu(); }}>
           Let’s Collaborate
         </button>
       </nav>
@@ -51,13 +50,16 @@ const HeroSection = ({
         <div className="pi-hero-text-left">
           <div className="pi-hero-up-text">
             <p>
-              it's me <span className="pi-outline">Shyam Rithul</span>  R S
+              it's me <span className="pi-outline">Shyam Rithul</span> R S
             </p>
             <p>React JS Developer</p>
           </div>
           <div className="pi-hero-down-text">
             <h1>
-              <span className="pi-outline"> The 0.07 <code>&lt;Code & Craft /&gt;</code></span>
+              <span className="pi-outline">
+                {" "}
+                The 0.07 <code>&lt;Code &amp; Craft /&gt;</code>
+              </span>
               <Typewriter
                 words={[
                   "That Gets Shit Done",
