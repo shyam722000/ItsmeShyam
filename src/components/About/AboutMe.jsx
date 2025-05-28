@@ -38,9 +38,7 @@ const AboutMe = () => {
 
   return (
     <section className="pi-about-section">
-      <div className="pi-logo" onClick={backtohome}>
-        0.07 <span>RS Craft</span>
-      </div>
+    
       <div className="pi-about-container">
         {/* Left Side: Image */}
         <div className="pi-about-image">

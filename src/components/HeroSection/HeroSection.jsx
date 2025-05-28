@@ -22,9 +22,14 @@ const HeroSection = ({
 
   return (
     <section className="pi-hero">
-      <div className="pi-logo">
-        0.07 <span>Code & Craft</span>
-      </div>
+       <div
+  className="pi-logo"
+  onClick={() => window.location.reload()}
+  style={{ cursor: 'pointer' }}
+>
+  0.07 <span>Code & Craft</span>
+</div>
+
 
       <button className="pi-hamburger" onClick={toggleMenu}>
         {isMenuOpen ? <FaTimes /> : <FaBars />}
