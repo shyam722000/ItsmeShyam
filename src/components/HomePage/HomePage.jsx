@@ -27,7 +27,7 @@ const HomePage = () => {
       <div>
         <AboutMe />
       </div>
-      <SkillsSection />
+      {/* <SkillsSection /> */}
       <div ref={projectRef}>
         <ProjectSection />
       </div>

@@ -1,5 +1,5 @@
 .pi-experience-section {
-  color: #fff;
+  color: #3a3c3f;
   padding: 4rem 2rem;
   font-family: "Georgia", serif;
 }
@@ -61,7 +61,7 @@
 }
 .pi-experience-text h4 {
   font-size: 1.3rem;
-  color: #d1d1d1;
+  color: #424040;
   font-weight: 500;
   margin-bottom: 0.3rem;
 }
@@ -74,14 +74,14 @@
 .pi-experience-duration {
   display: block;
   font-size: 1rem;
-  color: #aaa;
+  color: #295c7c;
   margin-bottom: 1rem;
 }
 
 .pi-experience-description {
   font-size: 1.1rem;
   line-height: 1.5;
-  color: #a7a2a2;
+  color: #141313;
   padding-left: 1.5rem;
   list-style-type: disc;
 }

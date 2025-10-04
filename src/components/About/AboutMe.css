@@ -1,55 +1,218 @@
+/* AboutMe.css */
+
 .pi-about-section {
-  color: #fff;
-  padding: 4rem 2rem;
-  font-family: "Georgia", serif;
-  /* background: #111827; */
   min-height: 100vh;
+  padding: 4rem 2rem;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
-.pi-logo {
-  cursor: pointer;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+/* Floating Background Elements */
+.pi-about-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.pi-logo span {
-  color: #d1d1d1;
+.pi-about-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.1;
+  animation: float 20s ease-in-out infinite;
+}
+
+.pi-about-shape-1 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.pi-about-shape-2 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #ec4899, #f59e0b);
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.pi-about-shape-3 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  top: 50%;
+  right: 5%;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, -30px) rotate(90deg);
+  }
+  50% {
+    transform: translate(-20px, 20px) rotate(180deg);
+  }
+  75% {
+    transform: translate(30px, 10px) rotate(270deg);
+  }
 }
 
 .pi-about-container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   align-items: center;
 }
 
-.pi-about-image {
-  width: 50%;
+/* Left Side: 3D Animated Cards */
+.pi-about-visual {
+  width: 45%;
+  position: relative;
+  height: 500px;
+  perspective: 1000px;
 }
 
-.pi-about-image img {
+.pi-about-card-stack {
+  position: relative;
   width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  transition: transform 10s ease;
-
-  clip-path: inset(0 100% 0 0);
-  animation: fillFromLeft 1s forwards ease-out;
+  height: 100%;
 }
 
-@keyframes fillFromLeft {
-  to {
-    clip-path: inset(0 0 0 0);
+.pi-about-card {
+  position: absolute;
+  width: 280px;
+  height: 350px;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pi-about-card:hover {
+  transform: translateY(-10px) scale(1.05) !important;
+}
+
+.pi-about-card.pi-card-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(100px) scale(0.6) rotateY(-30deg);
+  z-index: 0;
+}
+
+.pi-about-card.pi-card-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pi-about-card-1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transform: translateY(0) scale(1) rotateY(0deg);
+}
+
+.pi-about-card-2 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  top: 80px;
+  left: 60px;
+  z-index: 2;
+  transform: translateY(0) scale(0.95) rotateY(-10deg);
+  opacity: 0.8;
+}
+
+.pi-about-card-3 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  top: 160px;
+  left: 120px;
+  z-index: 1;
+  transform: translateY(0) scale(0.9) rotateY(-20deg);
+  opacity: 0.6;
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(5deg);
   }
 }
 
-.pi-about-image img:hover {
-  transform: scale(1.05);
+.pi-about-card-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
+.pi-about-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.pi-about-card p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+/* Card Indicators */
+.pi-about-card-indicators {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.pi-card-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.pi-card-indicator.active {
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+}
+
+.pi-card-indicator:hover {
+  background: #94a3b8;
+  transform: scale(1.2);
+}
+
+/* Right Side: Content */
 .pi-about-content {
-  width: 50%;
+  width: 55%;
   opacity: 0;
   transform: translateX(50px);
 }
@@ -58,43 +221,6 @@
   animation: fadeInSlideLeft 0.8s ease-out forwards;
 }
 
-.pi-about-content h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.pi-about-content .pi-outline {
-  color: #d1d1d1;
-}
-
-.pi-about-content p {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: #d1d1d1;
-  margin-bottom: 1.5rem;
-}
-
-.pi-about-icons {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.pi-about-icons a {
-  color: #777474;
-  transition: color 0.3s ease;
-}
-
-.pi-about-icons a:hover {
-  color: #fff;
-}
-
-.pi-about-icons svg {
-  width: 32px;
-  height: 32px;
-}
-
-/* Animations */
 @keyframes fadeInSlideLeft {
   0% {
     opacity: 0;
@@ -106,51 +232,233 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .pi-about-section {
-    padding: 3rem 1.5rem;
-  }
+.pi-about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+  position: relative;
+  display: inline-block;
+}
 
+.pi-about-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+}
+
+.pi-about-title .pi-gradient {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pi-about-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+.pi-about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pi-about-stat {
+  text-align: center;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.pi-about-stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+}
+
+.pi-about-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.pi-about-stat-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.pi-about-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pi-about-icons a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f8fafc;
+  color: #64748b;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.pi-about-icons a:hover {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: #fff;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+  border-color: transparent;
+}
+
+.pi-about-icons svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .pi-about-container {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
   }
 
-  .pi-about-image,
+  .pi-about-visual,
   .pi-about-content {
     width: 100%;
   }
 
-  .pi-about-content h2 {
-    font-size: 2rem;
+  .pi-about-visual {
+    height: 400px;
   }
 
-  .pi-about-content p {
-    font-size: 1.1rem;
+  .pi-about-card {
+    width: 240px;
+    height: 300px;
   }
 
-  .pi-about-icons svg {
-    width: 28px;
-    height: 28px;
+  .pi-about-card-2 {
+    top: 60px;
+    left: 50px;
+  }
+
+  .pi-about-card-3 {
+    top: 120px;
+    left: 100px;
+  }
+
+  .pi-about-title {
+    font-size: 2.5rem;
+  }
+
+  .pi-about-stats {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .pi-about-section {
-    padding: 2rem 1rem;
+    padding: 3rem 1.5rem;
   }
 
-  .pi-about-content h2 {
-    font-size: 1.8rem;
+  .pi-about-visual {
+    height: 350px;
+    margin-bottom: 2rem;
   }
 
-  .pi-about-content p {
+  .pi-about-card {
+    width: 200px;
+    height: 260px;
+    padding: 1.5rem;
+  }
+
+  .pi-about-card-icon {
+    font-size: 3rem;
+  }
+
+  .pi-about-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .pi-about-card p {
+    font-size: 0.875rem;
+  }
+
+  .pi-about-card-2 {
+    top: 50px;
+    left: 40px;
+  }
+
+  .pi-about-card-3 {
+    top: 100px;
+    left: 80px;
+  }
+
+  .pi-about-title {
+    font-size: 2rem;
+  }
+
+  .pi-about-text {
     font-size: 1rem;
   }
 
-  .pi-about-icons svg {
-    width: 24px;
-    height: 24px;
+  .pi-about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .pi-about-stat-number {
+    font-size: 1.5rem;
+  }
+
+  .pi-about-stat-label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pi-about-visual {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pi-about-card-stack {
+    transform: scale(0.8);
+  }
+
+  .pi-about-title {
+    font-size: 1.75rem;
+  }
+
+  .pi-about-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pi-about-icons {
+    justify-content: center;
   }
 }

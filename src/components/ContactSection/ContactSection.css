@@ -1,246 +1,398 @@
 .pi-contact-section {
-/* background: linear-gradient(135deg, #010c14, #062744); */
-
-  color: white;
-  overflow-x: hidden;
+  position: relative;
+  min-height: auto;
   padding: 4rem 2rem;
   font-family: "Georgia", serif;
-  border: none;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
 }
 
-.pi-contact-title {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: left;
-  font-weight: 600;
-  letter-spacing: 1px;
+.pi-contact-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.3;
 }
 
-.pi-contact-container {
+.pi-contact-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.pi-contact-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.pi-contact-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #94a3b8;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.8s ease-out 0.4s forwards;
+}
+
+.pi-contact-main-container {
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.pi-contact-details {
-  flex: 1;
+.pi-contact-info-wrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+.pi-contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.pi-contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.pi-contact-card.pi-contact-visible {
+  animation: cardSlideUp 0.6s ease-out forwards;
+}
+
+.pi-contact-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.pi-contact-card-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 12px;
+  font-size: 1.8rem;
+  color: #fff;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.pi-contact-card:hover .pi-contact-card-icon {
+  transform: rotate(360deg) scale(1.1);
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+}
+
+.pi-contact-card-text {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.4rem;
+  overflow: hidden;
 }
 
-.pi-contact-detail {
-  opacity: 0;
-  transform: translateX(50px);
-}
-
-.pi-contact-detail.pi-contact-visible {
-  animation: fadeInSlideLeft 0.8s ease-out forwards;
-}
-
-.pi-contact-label {
-  font-size: 1.2rem;
+.pi-contact-card-label {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-weight: 600;
-  text-transform: capitalize;
-  margin-right: 0.5rem;
 }
 
-.pi-contact-value {
-  font-size: 1.2rem;
-  color: #d1d1d1;
+.pi-contact-card-value {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.pi-social-section {
+  text-align: center;
+  padding: 2rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.pi-social-section.pi-contact-visible {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+.pi-social-title {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 .pi-social-links {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
-  gap: 1.5rem;
-  
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .pi-social-link {
   position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
   color: #fff;
   text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
+  transform: scale(0);
 }
 
 .pi-social-link.pi-contact-visible {
+  animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.pi-social-link::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  animation: rotate 3s linear infinite;
+}
+
+.pi-social-link:hover::before {
   opacity: 1;
 }
 
-.pi-social-link.pi-contact-visible::before {
-  content: "";
-  position: absolute;
-  top: -70px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 70px;
-  background: #fff;
-  animation: fallingLine 1.2s ease-in forwards;
-}
-
-.pi-social-link.pi-contact-visible::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  animation: waterDrop 0.8s ease-out 1.2s forwards;
+.pi-social-link:hover {
+  transform: translateY(-8px);
+  border-color: transparent;
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
 }
 
 .pi-social-icon {
-  font-size: 40px;
-  opacity: 0;
-  transition: transform 0.3s ease;
-}
-
-.pi-social-link.pi-contact-visible .pi-social-icon {
-  animation: fadeIn 0.5s ease-out 2s forwards;
+  font-size: 2rem;
+  transition: all 0.3s ease;
 }
 
 .pi-social-link:hover .pi-social-icon {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
-/* Animations */
-@keyframes fadeInSlideLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.pi-social-tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
 }
 
-@keyframes fallingLine {
-  0% {
-    height: 0;
-    top: -70px;
-    opacity: 1;
-  }
-  80% {
-    height: 70px;
-    top: 0;
-    opacity: 1;
-  }
-  100% {
-    height: 70px;
-    top: 0;
-    opacity: 0;
-  }
+.pi-social-link:hover .pi-social-tooltip {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
 }
 
-@keyframes waterDrop {
-  0% {
+@keyframes fadeInDown {
+  to {
     opacity: 1;
-    transform: translateX(-50%) scale(0);
-  }
-  50% {
-    opacity: 0.7;
-    transform: translateX(-50%) scale(1.5);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) scale(2);
+    transform: translateY(0);
   }
 }
 
-@keyframes fadeIn {
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
   0% {
-    opacity: 0;
+    transform: rotate(0deg);
   }
   100% {
-    opacity: 1;
+    transform: rotate(360deg);
   }
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .pi-contact-title {
-    font-size: 2rem;
+  .pi-project-title {
+    font-size: 2.8rem;
   }
 
-  .pi-contact-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .pi-contact-details {
-    align-items: center;
-    text-align: center;
-  }
-
-  .pi-social-links {
-    justify-content: center;
-  }
-
-  .pi-contact-label,
-  .pi-contact-value {
+  .pi-contact-subtitle {
     font-size: 1.1rem;
   }
 
+  .pi-contact-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pi-social-link {
+    width: 65px;
+    height: 65px;
+  }
+
   .pi-social-icon {
-    font-size: 35px;
-  }
-
-  .pi-social-link::before {
-    top: -60px;
-    height: 60px;
-  }
-
-  .pi-social-link::after {
-    width: 18px;
-    height: 18px;
+    font-size: 1.8rem;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .pi-contact-section {
-    padding: 2rem 1rem;
+    padding: 4rem 1.5rem;
   }
 
-  .pi-contact-title {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+  .pi-project-title {
+    font-size: 2.2rem;
   }
 
-  .pi-contact-container {
+  .pi-contact-subtitle {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .pi-contact-card {
+    padding: 1.5rem;
     gap: 1rem;
   }
 
-  .pi-contact-details {
-    gap: 0.8rem;
+  .pi-contact-card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
   }
 
-  .pi-contact-label,
-  .pi-contact-value {
+  .pi-contact-card-value {
     font-size: 1rem;
   }
 
+  .pi-social-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .pi-social-title {
+    font-size: 1.5rem;
+  }
+
   .pi-social-links {
-    gap: 1rem;
+    gap: 1.5rem;
+  }
+
+  .pi-social-link {
+    width: 60px;
+    height: 60px;
   }
 
   .pi-social-icon {
-    font-size: 30px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pi-contact-section {
+    padding: 3rem 1rem;
   }
 
-  .pi-social-link::before {
-    top: -50px;
-    height: 50px;
+  .pi-project-title {
+    font-size: 1.8rem;
   }
 
-  .pi-social-link::after {
-    width: 15px;
-    height: 15px;
+  .pi-contact-cards {
+    gap: 1rem;
+  }
+
+  .pi-contact-card {
+    padding: 1.2rem;
+  }
+
+  .pi-contact-card-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .pi-contact-card-label {
+    font-size: 0.8rem;
+  }
+
+  .pi-contact-card-value {
+    font-size: 0.95rem;
+  }
+
+  .pi-social-link {
+    width: 55px;
+    height: 55px;
+  }
+
+  .pi-social-icon {
+    font-size: 1.4rem;
   }
 }

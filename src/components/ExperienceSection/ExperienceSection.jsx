@@ -9,7 +9,7 @@ const experiences = [
 {
   title: "Software Developer - React JS",
   company: "Mecwin Technologies India Private Limited",
-  duration: "2024/01 - Present",
+  duration: "2024/01 - 2025/09",
   location: "Bangalore, India",
   description: [
     "Contributed to building scalable and efficient React.js applications with a focus on performance, reusability, and seamless API integration.",

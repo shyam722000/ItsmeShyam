@@ -24,9 +24,9 @@ const BlogSection = () => {
   const backtohome = () => {
     navigate("/");
   };
-  const categories = ["Api"];
+  // const categories = ["Api"];
 
-  //   const categories = ["All", "React", "JavaScript", "CSS", "Api"];
+    const categories = ["All", "React", "JavaScript", "CSS", "Api"];
 
   const filteredPosts =
     selectedCategory === "All"
@@ -100,9 +100,7 @@ const BlogSection = () => {
 
       
       </div>
-        <h2 className="pi-project-title">
-        Code <span className="pi-outline">Snippets </span>
-      </h2>
+       
       <div className="pi-filter-container" ref={filterRef}>
         <div className="pi-filter-line"></div>
         {categories.map((category, index) => (
