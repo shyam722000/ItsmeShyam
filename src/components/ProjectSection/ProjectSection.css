@@ -112,20 +112,21 @@
 .pi-nav-right {
   right: 10px;
 }
-
 .pi-project-card {
-  background: #ffffff;
+  padding: 10px 5px;
+  background: #e6e9ef;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid #e2e8f0;
-  opacity: 0;
-  transform: translateY(50px);
+  border: none;
   position: relative;
   min-width: 320px;
   max-width: 320px;
   flex-shrink: 0;
+  transition: all 0.4s ease;
+  box-shadow: 8px 8px 16px #c5c9d1,
+              -8px -8px 16px #ffffff;
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 .pi-project-card.pi-card-visible {
@@ -143,10 +144,14 @@
   }
 }
 
+/* 🌟 Neumorphic hover effect */
 .pi-project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
-  border-color: #3b82f6;
+  background: linear-gradient(145deg, #f0f3f9, #d7dbe3);
+  box-shadow: inset 8px 8px 12px #c5c9d1,
+              inset -8px -8px 12px #ffffff,
+              0 12px 30px rgba(59, 130, 246, 0.2);
+  transition: all 0.4s ease;
 }
 
 .pi-project-image-wrapper {

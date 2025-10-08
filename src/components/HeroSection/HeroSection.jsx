@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HeroSection.css";
-import { FaBars, FaTimes, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import LightRays from './LightRays';
 
 const HeroSection = ({
   scrollToProjects,
@@ -23,9 +24,24 @@ const HeroSection = ({
 
   return (
     <section className="hero-section">
-      {/* Animated Background Blurs */}
-      <div className="hero-bg-blur-1"></div>
-      <div className="hero-bg-blur-2"></div>
+      
+      {/* LightRays Animated Background */}
+      <div className="light-rays-background-wrapper">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#171717ff"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          fadeDistance={1.0}
+          saturation={1.0}
+          pulsating={false}
+        />
+      </div>
 
       {/* Navigation */}
       <nav className="hero-nav">
@@ -147,11 +163,7 @@ const HeroSection = ({
               Get In Touch
             </button>
           </div>
-
-       
         </div>
-
-     
       </div>
     </section>
   );
