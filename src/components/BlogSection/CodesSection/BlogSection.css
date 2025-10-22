@@ -1,6 +1,6 @@
 .pi-blog-section {
-  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2a2f4a 100%);
-  color: #fff;
+  /* background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2a2f4a 100%); */
+  color: #1a202c;
   padding: 5rem 2rem;
   font-family: "Georgia", serif;
   min-height: 100vh;
@@ -16,41 +16,97 @@
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   opacity: 0.4;
   pointer-events: none;
+  z-index: 1;
 }
 
-.pi-logo {
-  font-size: 1.8rem;
-  font-weight: 700;
+/* Light rays background - reduced opacity */
+.light-rays-background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header container for back button and logo */
+.pi-header-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 3rem;
-  color: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+/* Back button */
+.pi-back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2d3748;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Georgia", serif;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.pi-back-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pi-back-button svg {
+  transition: transform 0.3s ease;
+}
+
+.pi-back-button:hover svg {
+  transform: translateX(-3px);
+}
+
+/* Logo - reduced size */
+.pi-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a202c;
   position: relative;
   z-index: 10;
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .pi-logo:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .pi-logo span {
-  color: #64b5f6;
+  color: #2563eb;
   margin-left: 0.5rem;
 }
-
-
 
 .pi-filter-container {
   display: flex;
@@ -62,14 +118,15 @@
   flex-wrap: wrap;
   z-index: 10;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 50px;
+  /* background: rgba(10, 14, 39, 0.7); */
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .pi-filter-container.pi-filter-visible {
@@ -77,9 +134,9 @@
 }
 
 .pi-filter-button {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #d1d1d1;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #4a5568;
   font-size: 1rem;
   font-family: "Georgia", serif;
   cursor: pointer;
@@ -104,10 +161,10 @@
 }
 
 .pi-filter-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.25);
   transform: translateY(-2px);
-  color: #fff;
+  color: #1a202c;
 }
 
 .pi-blog-posts-container {
@@ -121,9 +178,9 @@
 }
 
 .pi-blog-post {
-  background: rgba(255, 255, 255, 0.05);
+  /* background: rgba(10, 14, 39, 0.6); */
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 16px;
   padding: 2rem;
   opacity: 0;
@@ -131,6 +188,7 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .pi-blog-post::before {
@@ -156,23 +214,23 @@
 
 .pi-blog-post:hover {
   transform: translateY(-8px) scale(1);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  /* background: rgba(10, 14, 39, 0.8); */
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .pi-blog-post-title {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  color: #fff;
+  color: #1a202c;
   line-height: 1.4;
 }
 
 .pi-blog-post-date {
   display: block;
   font-size: 0.9rem;
-  color: #94a3b8;
+  color: #4a5568;
   margin-bottom: 1rem;
   font-weight: 500;
 }
@@ -180,7 +238,7 @@
 .pi-blog-post-excerpt {
   font-size: 1rem;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: #2d3748;
   margin-bottom: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -212,12 +270,12 @@
   height: 24px;
   width: 24px;
   transition: transform 0.3s ease;
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
 }
 
 .pi-blog-post-link {
   font-size: 1rem;
-  color: #64b5f6;
+  color: #2563eb;
   text-decoration: none;
   background: none;
   border: none;
@@ -230,8 +288,8 @@
 }
 
 .pi-blog-post-link:hover {
-  color: #fff;
-  background: rgba(100, 181, 246, 0.1);
+  color: #1e40af;
+  background: rgba(37, 99, 235, 0.1);
 }
 
 .pi-blog-post:hover .pi-blog-post-link-container img {
@@ -245,7 +303,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
@@ -256,8 +314,9 @@
 }
 
 .pi-popup-content {
-  background: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
-  color: #fff;
+  /* background: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%); */
+  background: #ffffff;
+  color: #1a202c;
   padding: 2.5rem;
   border-radius: 20px;
   max-width: 900px;
@@ -266,8 +325,8 @@
   overflow-y: auto;
   position: relative;
   font-family: "Georgia", serif;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
   animation: slideInUp 0.4s ease-out;
 }
 
@@ -276,30 +335,30 @@
 }
 
 .pi-popup-content::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 10px;
 }
 
 .pi-popup-content::-webkit-scrollbar-thumb {
-  background: rgba(100, 181, 246, 0.5);
+  background: rgba(37, 99, 235, 0.5);
   border-radius: 10px;
 }
 
 .pi-popup-content::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 181, 246, 0.7);
+  background: rgba(37, 99, 235, 0.7);
 }
 
 .pi-popup-content h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: #1a202c;
   font-weight: 600;
 }
 
 .pi-popup-content p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #cbd5e1;
+  color: #2d3748;
   margin-bottom: 1.5rem;
 }
 
@@ -307,8 +366,8 @@
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -317,35 +376,36 @@
   justify-content: center;
   font-size: 1.8rem;
   cursor: pointer;
-  color: #fff;
+  color: #1a202c;
   font-family: "Georgia", serif;
   transition: all 0.3s ease;
 }
 
 .pi-popup-close:hover {
-  background: rgba(255, 70, 70, 0.8);
-  border-color: rgba(255, 70, 70, 1);
+  background: rgba(239, 68, 68, 0.8);
+  border-color: rgba(239, 68, 68, 1);
+  color: #fff;
   transform: rotate(90deg);
 }
 
 .pi-code-snippet {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.05);
   padding: 1.5rem;
   border-radius: 12px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #e2e8f0;
+  color: #2d3748;
   white-space: pre-wrap;
   word-wrap: break-word;
   margin-top: 1.5rem;
-  border: 1px solid rgba(100, 181, 246, 0.2);
-  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .pi-code-snippet code {
   display: block;
-  color: #64b5f6;
+  color: #2563eb;
 }
 
 /* Animations */
@@ -408,8 +468,18 @@
     padding: 4rem 1.5rem;
   }
 
-  .pi-project-title {
-    font-size: 2.5rem;
+  .pi-header-container {
+    margin-bottom: 2.5rem;
+  }
+
+  .pi-logo {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .pi-back-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
 
   .pi-filter-container {
@@ -449,8 +519,24 @@
     padding: 3rem 1rem;
   }
 
-  .pi-project-title {
-    font-size: 2rem;
+  .pi-header-container {
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .pi-logo {
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .pi-back-button {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .pi-back-button svg {
+    width: 18px;
+    height: 18px;
   }
 
   .pi-filter-container {
@@ -501,13 +587,20 @@
     padding: 2rem 0.8rem;
   }
 
-  .pi-logo {
-    font-size: 1.5rem;
+  .pi-header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 
-  .pi-project-title {
-    font-size: 1.7rem;
-    margin-bottom: 2rem;
+  .pi-logo {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .pi-back-button {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
   }
 
   .pi-filter-container {

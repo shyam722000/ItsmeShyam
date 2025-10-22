@@ -6,6 +6,7 @@ import { javaScriptPosts } from "../Json/javascriptBlogData";
 import { cssPosts } from "../Json/CSS";
 import { apiFunctions } from "../Json/Api";
 import arrow from "../../../Images/arrow.png";
+import LightRays from "../../HeroSection/LightRays";
 
 const blogPosts = [
   ...reactPosts,
@@ -24,9 +25,9 @@ const BlogSection = () => {
   const backtohome = () => {
     navigate("/");
   };
-  // const categories = ["Api"];
+  const categories = ["Api"];
 
-    const categories = ["All", "React", "JavaScript", "CSS", "Api"];
+  // const categories = ["All", "React", "JavaScript", "CSS", "Api"];
 
   const filteredPosts =
     selectedCategory === "All"
@@ -91,16 +92,30 @@ const BlogSection = () => {
 
   return (
     <section className="pi-blog-section">
+      <div className="light-rays-background-wrapper">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#0D0D0D"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          fadeDistance={1.0}
+          saturation={1.0}
+          pulsating={false}
+        />
+      </div>
       <div
         className="pi-logo"
         onClick={backtohome}
         style={{ cursor: "pointer" }}
       >
-        0.07 <span>Code & Craft</span>
-
-      
+        <span>back </span>
       </div>
-       
+
       <div className="pi-filter-container" ref={filterRef}>
         <div className="pi-filter-line"></div>
         {categories.map((category, index) => (

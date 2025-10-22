@@ -129,6 +129,44 @@
   transform: translateY(50px);
 }
 
+.pi-project-view-btn {
+  display: inline-block;
+  background: #e0e0e0; /* Light neutral base */
+  color: #df4a09;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 22px;
+  border-radius: 30px;
+  box-shadow: 6px 6px 12px #545f44, -6px -6px 12px #254a74 inset;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pi-project-view-btn:hover {
+  box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+  transform: translateY(1px);
+  color: #111;
+}
+
+.pi-project-view-btn:active {
+  box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;
+  transform: scale(0.97);
+}
+
+/* Optional: Dark theme compatibility */
+.dark .pi-project-view-btn {
+  background: #1e1e1e;
+  color: #f3f3f3;
+  box-shadow: 6px 6px 12px #161616, -6px -6px 12px #262626;
+}
+
+.dark .pi-project-view-btn:hover {
+  box-shadow: inset 4px 4px 8px #161616, inset -4px -4px 8px #262626;
+  color: #fff;
+}
+
 .pi-project-card.pi-card-visible {
   animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -189,24 +227,6 @@
 
 .pi-project-card:hover .pi-project-overlay {
   opacity: 1;
-}
-
-.pi-project-view-btn {
-  padding: 0.5rem 1.5rem;
-  background: #ffffff;
-  color: #3b82f6;
-  border: none;
-  border-radius: 25px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-}
-
-.pi-project-view-btn:hover {
-  background: #3b82f6;
-  color: #ffffff;
-  transform: scale(1.05);
 }
 
 .pi-project-content {
