@@ -34,6 +34,9 @@ const HomePage = () => {
       <div ref={experienceRef}>
         <ExperienceSection />
       </div>
+      <div >
+        <SkillsSection />
+      </div>
       
       <div ref={contactRef}>
         <ContactSection />

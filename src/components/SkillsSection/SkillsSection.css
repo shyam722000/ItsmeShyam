@@ -1,84 +1,173 @@
-.cc-skills {
-  color: #fff;
-  padding: 2rem;
-  font-family: "Georgia", serif;
-  overflow: hidden; /* Ensure no overflow outside section */
-}
-
-.cc-skills-scroller {
-  display: flex;
-  width: fit-content; /* Adjust width to content */
-  animation: scroll 15s linear infinite; /* Slower for smoothness */
-}
-
-.cc-pentagon-container {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 2rem; /* Consistent spacing between logos */
-  flex-shrink: 0;
-}
-
-/* Pentagon shape with 3D effect */
-.cc-pentagon {
+.pi-skills-section-v2 {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background: #f8fafc;
   position: relative;
-  width: 100px;
-  height: 100px;
-  border: 1px solid #fff; /* Optional border */
-  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-  transform-style: preserve-3d;
-  transform: perspective(600px) rotateY(20deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.cc-pentagon:hover {
-  transform: perspective(600px) rotateY(0deg);
+/* Background Blobs */
+.pi-skills-section-v2::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 0.12;
+  z-index: 0;
 }
 
-.cc-skills-logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+.pi-skills-section-v2::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(135deg, #ec4899, #f59e0b);
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.pi-skills-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+  color: #0f172a;
+}
+
+.pi-skills-title .pi-outline {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pi-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-/* Right-to-left scrolling animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%); /* Move exactly half the width for seamless loop */
-  }
+/* Skill Item */
+.pi-skill-item {
+  aspect-ratio: 1;
+  position: relative;
 }
 
-/* Pause animation on hover for better interaction */
-.cc-skills-scroller:hover {
-  animation-play-state: paused;
+.pi-skill-icon-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #e6e9ef;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    10px 10px 20px #c5c9d1,
+    -10px -10px 20px #ffffff;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  overflow: hidden;
+}
+
+.pi-skill-icon {
+  font-size: 3.2rem;
+  color: #3b82f6;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+/* Skill Name (Hidden → Reveal on Hover) */
+.pi-skill-name {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(139, 92, 246, 0.95));
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 24px;
+  text-align: center;
+  padding: 1rem;
+  z-index: 3;
+}
+
+/* Hover Magic */
+.pi-skill-item:hover .pi-skill-icon-wrapper {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 
+    0 20px 40px rgba(59, 130, 246, 0.25),
+    inset 6px 6px 12px rgba(197, 201, 209, 0.4),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.6);
+  background: linear-gradient(145deg, #f0f3f9, #dfe3eb);
+}
+
+.pi-skill-item:hover .pi-skill-icon {
+  transform: scale(0) rotate(360deg);
+  opacity: 0;
+}
+
+.pi-skill-item:hover .pi-skill-name {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .pi-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 1.8rem;
+  }
+  .pi-skill-icon {
+    font-size: 2.8rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .cc-skills {
-    padding: 1rem;
+  .pi-skills-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
   }
+}
 
-  .cc-pentagon-container {
-    margin: 0 1rem;
+@media (max-width: 480px) {
+  .pi-skills-section-v2 {
+    padding: 5rem 1rem;
   }
-
-  .cc-pentagon {
-    width: 80px;
-    height: 80px;
+  .pi-skills-title {
+    font-size: 2.5rem;
   }
-
-  .cc-skills-logo {
-    width: 50px;
-    height: 50px;
+  .pi-skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+  .pi-skill-icon {
+    font-size: 2.4rem;
+  }
+  .pi-skill-name {
+    font-size: 0.85rem;
+    padding: 0.5rem;
   }
 }
