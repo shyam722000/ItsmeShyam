@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "./ProjectSection.css";
 import orders from "./../../Images/orders.jpg";
@@ -27,13 +27,7 @@ const projects = [
     title: "Resume Builder",
     description:
       "A dynamic web application for creating professional, ATS-friendly resumes with customizable templates and live preview.",
-    tags: [
-      "Web App",
-      "React",
-      "PDF Generation",
-      "Resume Builder",
-      "ATS Optimized",
-    ],
+    tags: ["Web App", "React", "PDF Generation", "Resume Builder", "ATS Optimized"],
     image: resume,
     link: "https://www.gccresumebuilder.com/",
   },
@@ -55,7 +49,7 @@ const projects = [
   {
     title: "EcoSurya Energies Company Website",
     description:
-      "Developed a modern, responsive corporate website for EcoSurya Energies — a renewable energy company pioneering solar-powered agricultural solutions. The site highlights their innovative Solar Motor Pumps and MPPT Controllers, focusing on sustainability, accessibility, and rural empowerment.",
+      "Developed a modern, responsive corporate website for EcoSurya Energies — a renewable energy company pioneering solar-powered agricultural solutions.",
     tags: [
       "Corporate Website",
       "Renewable Energy",
@@ -70,46 +64,17 @@ const projects = [
 ];
 
 const ProjectSection = () => {
-  const cardRefs = useRef([]);
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("pi-card-visible");
-            }, index * 150);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    cardRefs.current.forEach((card) => {
-      if (card) observer.observe(card);
-    });
-
-    return () => {
-      cardRefs.current.forEach((card) => {
-        if (card) observer.unobserve(card);
-      });
-    };
-  }, []);
-
-  const scrollLeft = () => {
+  const scrollPrev = () => {
     if (containerRef.current) {
-      containerRef.current.scrollBy({ left: -320, behavior: "smooth" });
+      containerRef.current.scrollBy({ left: -344, behavior: "smooth" });
     }
   };
 
-  const scrollRight = () => {
+  const scrollNext = () => {
     if (containerRef.current) {
-      containerRef.current.scrollBy({ left: 320, behavior: "smooth" });
+      containerRef.current.scrollBy({ left: 344, behavior: "smooth" });
     }
   };
 
@@ -118,21 +83,19 @@ const ProjectSection = () => {
       <h2 className="pi-project-title">
         My <span className="pi-outline">Projects</span>
       </h2>
+
       <div className="pi-project-wrapper">
-        <button className="pi-nav-icon pi-nav-left" onClick={scrollLeft}>
+        <button className="pi-nav-icon pi-nav-left" onClick={scrollPrev}>
           <FaArrowLeft />
         </button>
+
         <div className="pi-project-container" ref={containerRef}>
           {projects.map((project, index) => (
-            <div
-              className="pi-project-card"
-              key={index}
-              ref={(el) => (cardRefs.current[index] = el)}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+            <div className="pi-project-card" key={project.title}>
               <div className="pi-project-number">
                 {String(index + 1).padStart(2, "0")}
               </div>
+
               <div className="pi-project-image-wrapper">
                 <img
                   src={project.image}
@@ -150,16 +113,19 @@ const ProjectSection = () => {
                       Visit Site
                     </a>
                   ) : (
-                    <button className="pi-project-view-btn">Visit Site</button>
+                    <button className="pi-project-view-btn" disabled>
+                      Coming Soon
+                    </button>
                   )}
                 </div>
               </div>
+
               <div className="pi-project-content">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="pi-project-tags">
-                  {project.tags.slice(0, 5).map((tag, tagIndex) => (
-                    <span key={tagIndex} className="pi-project-tag">
+                  {project.tags.slice(0, 5).map((tag, i) => (
+                    <span key={i} className="pi-project-tag">
                       {tag}
                     </span>
                   ))}
@@ -173,7 +139,8 @@ const ProjectSection = () => {
             </div>
           ))}
         </div>
-        <button className="pi-nav-icon pi-nav-right" onClick={scrollRight}>
+
+        <button className="pi-nav-icon pi-nav-right" onClick={scrollNext}>
           <FaArrowRight />
         </button>
       </div>

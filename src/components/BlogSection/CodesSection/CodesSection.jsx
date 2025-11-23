@@ -156,6 +156,7 @@ const BlogSection = () => {
           </div>
         ))}
       </div>
+      
 
       {selectedPost && (
         <div className="pi-popup">

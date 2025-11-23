@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import "./ContactSection.css";
+import image from "../../Images/me.png"
 
 const contactDetails = [
   {
@@ -136,6 +137,10 @@ const ContactSection = () => {
             </div>
 
             <div className="pi-social-section" ref={ctaRef}>
+         <div className="pi-social-leftsection">
+  <img src={image} alt="Profile" />
+</div>
+<div className="pi-social-rightsection">
               <h3 className="pi-social-title">Connect With Me</h3>
               <div className="pi-social-links">
                 {socialLinks.map((link, index) => {
@@ -157,6 +162,9 @@ const ContactSection = () => {
                   );
                 })}
               </div>
+
+</div>
+              
             </div>
           </div>
         </div>
