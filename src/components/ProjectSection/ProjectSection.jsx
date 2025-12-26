@@ -6,6 +6,7 @@ import resume from "./../../Images/resume.png";
 import remote from "./../../Images/remote.png";
 import eglobe from "./../../Images/eglobe.png";
 import ecosurya from "./../../Images/ecosurya.png";
+import mocknex from "./../../Images/mocknex.png";
 
 const projects = [
   {
@@ -23,6 +24,25 @@ const projects = [
     ],
     image: orders,
   },
+  {
+  title: "Mocknex – Online Skill Assessment Platform",
+  description:
+    "A full-stack online mock test platform for skill assessment and interview preparation, featuring timed exams, automated evaluation, question-wise answer review, and performance analytics.",
+  tags: [
+    "Online Assessment",
+    "Mock Tests",
+    "Next.js",
+    "React",
+    "Redux Toolkit",
+    "Context API",
+    "Supabase",
+    "Firebase Auth",
+    "Tailwind CSS",
+  ],
+  image: mocknex, // import mocknex image like others
+  link: "https://mocknex-online-skill-assessment-pla-mauve.vercel.app/", // optional (remove if not live)
+},
+
   {
     title: "Resume Builder",
     description:

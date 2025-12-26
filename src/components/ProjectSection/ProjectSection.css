@@ -141,11 +141,11 @@
 
 .pi-project-view-btn {
   background: #ffffff;
-  color: #df4a09;
+  color: #0f172a;
   font-weight: 600;
   padding: 10px 22px;
   border-radius: 30px;
-  box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+  /* box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff; */
   transition: all 0.2s ease;
   text-decoration: none;
   border: none;
