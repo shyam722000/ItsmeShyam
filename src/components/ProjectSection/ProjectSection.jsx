@@ -7,6 +7,7 @@ import remote from "./../../Images/remote.png";
 import eglobe from "./../../Images/eglobe.png";
 import ecosurya from "./../../Images/ecosurya.png";
 import mocknex from "./../../Images/mocknex.png";
+import arab from "./../../Images/arab.png";
 
 const projects = [
   {
@@ -58,6 +59,22 @@ const projects = [
     tags: ["Real-Time App", "React", "Context", "Tailwind", "REST API"],
     image: remote,
   },
+  {
+  title: "Arab First – Company Portfolio Website",
+  description:
+    "A modern company portfolio website built using Next.js, focusing on performance, SEO optimization, and responsive design to showcase services and brand identity.",
+  tags: [
+    "Under development Company Portfolio",
+    "Next.js",
+    "React",
+    "SEO Optimization",
+    "Responsive Design",
+    "Production Deployment",
+  ],
+  image: arab, 
+  link: "https://arab-first.vercel.app/",
+},
+
   {
     title: "Eglobe Innovative Solutions Company Website",
     description:
@@ -134,7 +151,7 @@ const ProjectSection = () => {
                     </a>
                   ) : (
                     <button className="pi-project-view-btn" disabled>
-                      Coming Soon
+                     Private Project – Company Confidential
                     </button>
                   )}
                 </div>
